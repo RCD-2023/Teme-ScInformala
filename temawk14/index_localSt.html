@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection</title>
+</head>
+<body>
+    <h2>Select Language</h2>
+    <form id="languageForm">
+        <input type="radio" id="en-US" name="language" value="en-US">
+        <label for="en-US">English (US)</label><br>
+        <input type="radio" id="ro-RO" name="language" value="ro-RO">
+        <label for="ro-RO">Romanian (RO)</label><br>
+    </form>
+
+    <script>
+        // Function to set a value in localStorage
+        function setLocalStorage(key, value) {
+            localStorage.setItem(key, value);
+        }
+
+        // Function to get a value from localStorage
+        function getLocalStorage(key) {
+            return localStorage.getItem(key);
+        }
+
+        // Function to pre-select the radio button based on the stored value
+        function preSelectLanguage() {
+            const selectedLanguage = getLocalStorage("language");
+            if (selectedLanguage) {
+                document.getElementById(selectedLanguage).checked = true;
+            }
+        }
+
+        // Event listener to store the selected language in localStorage
+        document.getElementById('languageForm').addEventListener('change', function(event) {
+            if (event.target.name === 'language') {
+                setLocalStorage('language', event.target.value);
+            }
+        });
+
+        // Pre-select the language when the page loads
+        preSelectLanguage();
+    </script>
+</body>
+</html>
