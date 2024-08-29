@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- stiluri si scripturi custom -->
+    <link rel="stylesheet" href="mystyle.css" />
+    <script defer src="myscript.js"></script>
+    <title>Java script apps</title>
+  </head>
+
+  <!--  -->
+
+  <body>
+    <button type="button" class="btn-back"> <a href="../">Back to main</a></button>
+    <h1>Aplicatii care utilizeaza java script</h1>
+    <!-- cardul 1 calculator SMD -->
+    <div class="card mycard">
+    <div class="card-body">
+    <h2 class="card-title">Calculator SMD(deviatia medie standard)</h2>
+    <p class="card-text">Un calculator minimal care utilizeaza modalul din bootstrap pentru introducere si rezultat</p>
+      <!-- Buton care deschide modalul -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#smdModal"
+      >
+        Acceseaza Calculatorul
+      </button>
+      <!-- Modalul 1 -->
+      <div
+        class="modal fade"
+        id="smdModal"
+        tabindex="-1"
+        aria-labelledby="smdModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="smdModalLabel">Calculator SMD(deviatia medie standard)</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="input-area">
+                <label for="prob1">Probabilitatea 1</label>
+                <input
+                  id="prob1"
+                  type="number"
+                  placeholder="valoare intre 0 si 1!"
+                  class="form-control"
+                />
+                <br>
+             <label for="prob2">Probabilitatea 2</label>
+                  <input
+                    id="prob2"
+                    type="number"
+                    placeholder="valoare intre 0 si 1!"
+                    class="form-control"
+                  />
+                  <br>
+                <button
+                    id="btn"
+                    onclick="calculeazaSMD()"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Calculeaza
+                </button>
+                
+              </form>
+              <div class="raspuns">
+                <p id="smd-result">SMD =</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="myscripts.js"></script>
+      </div>
+</div>
+<!-- cardul 2 regions finder -->
+ <div class="card mycard">
+    <div class="card-body">
+    <h3 class="card-title">Gasirea regiunii in care se afla zona vizitata</h3>
+    <p class="card-text">Este o aplicatie prin care poti foarte rapid sa afli in ce regiune se afla tara care urmaza sa fie vizitata</p>
+    <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#regiuniModal"
+      >
+        Regions finder
+      </button>
+      
+      <!-- modalul 2 -->
+      <div
+        class="modal fade"
+        id="regiuniModal"
+        tabindex="-1"
+        aria-labelledby="regiuniModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="regiuniModalLabel">Afla regiunea O.M.S.</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+          <input type="text" class="" id="myedit" oninput="editChange()" />
+    <div id="result">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <script src="myscripts.js"></script>
+</div>
+
+<div class="card mycard">
+    <div class="card-body">
+    <h2 class="card-title">Lista de activitati zilnice</h2>
+    <p class="card-text">O aplicatie care foloseste local_storage si un calendar. Practic la fiecare zi a calendarului putem sa asociem una sau mai multe todo-uri., pe care ulterior le putem sterge sau edita </p>
+    <a href="./apps/todoApp"  target="_blank" class="btn btn-primary">Deschide aplicatia</a>
+  </div>
+</div>
+    
+    
+  </body>
+</html>

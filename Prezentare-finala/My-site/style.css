@@ -1,0 +1,214 @@
+/* totdeauna startam cu fontul, importam din google.font.com  */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+/*apoi folosim selectorul universal pentru a aplica box sizing tuturor elementelor dintr-o pagina  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* apoi setam bodyul */
+body {
+  font-family: "Open Sans", sans-serifs;
+  color: #222;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* urmeaza setarile nav */
+.nav {
+  position: fixed;
+  background-color: #222;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3 ease-in-out;
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  transition: all 0.3 ease-in-out;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3 ease-in-out;
+}
+
+.nav.active {
+  background-color: #a79f9f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav.active a {
+  color: #000000;
+}
+
+.nav.active .container {
+  padding: 10px 0;
+}
+
+.nav a.current-active,
+.nav a:hover {
+  color: #5655aa;
+  font-weight: bold;
+}
+
+/* urmeaza setari pt hero area */
+
+.hero {
+  background-image: url("https://images.unsplash.com/photo-1721804979603-f7c0a63ec26e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  /* background-position: bottom center; */
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+
+/* .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+} */
+
+.hero h1 {
+  font-size: 46px;
+  margin: -20px 0 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* urmeaza setari pt section areea cu cele 3 card colapse*/
+
+/* stilizarea pentru carduri */
+cards-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: transparent;
+  border: 1px solid #9fa4a8;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.card.active {
+  background-color: #ffffffd1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.active::before,
+.card.active::after {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  color: #2ecc71;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.card.active::before {
+  color: #3498db;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
+
+.card-title {
+  margin: 0 35px 5px 0px;
+}
+
+.card-text {
+  display: none;
+}
+.card-text a {
+  text-decoration: none;
+}
+.card-text a:hover {
+  color: #1b1a74;
+  font-weight: bold;
+  background-color: #3498db;
+  padding: 0.1rem;
+  border-radius: 3px;
+}
+.card.active .card-text {
+  display: block;
+  text-decoration: none;
+}
+.card-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+}
+
+.card-toggle:focus {
+  outline: none;
+}
+
+.card-toggle .fa-times {
+  display: none;
+  color: white;
+}
+
+.card.active .card-toggle .fa-times {
+  display: block;
+}
+
+.card.active .card-toggle .fa-chevron-down {
+  display: none;
+}
+
+.card.active .card-toggle {
+  background-color: #9fa4a8;
+}

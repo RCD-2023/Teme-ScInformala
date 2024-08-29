@@ -1,0 +1,272 @@
+<html>
+  <head>
+    <title>Regiuni OMS</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to top,#7dd56f, #c0d6d4 );
+      }
+    </style>
+  </head>
+  <body onload="document.getElementById('myedit').value=''">
+    <h2><b>INTRODU TARA CA SA AFLI REGIUNEA</b></h2>
+    <br />
+
+    <!-- aici avem campul unde punem tara -->
+    <input type="text" class="" id="myedit" oninput="editChange()" />
+    <div id="result">&nbsp;</div>
+    <script>
+      const regiuniWHO = {
+        AFR: [
+          "Angola",
+          "Maroc",
+          "Namibia",
+          "Algeria",
+          "Benin",
+          "Botswana",
+          "Burkina Faso",
+          "Burundi",
+          "Cameroon",
+          "Capo Verde",
+          "Central African Republic",
+          "Chad",
+          "Comoros",
+          "Ivory Coast",
+          "Democratic Republic of the Congo",
+          "Equatorial Guinea",
+          "Guinea",
+          "Eritrea",
+          "Ethiopia",
+          "Gabon",
+          "Gambia",
+          "Ghana",
+          "Guinea",
+          "Guinea-Bissau",
+          "Kenya",
+          "Lesotho",
+          "Liberia",
+          "Madagascar",
+          "Malawi",
+          "Mali",
+          "Mauritania",
+          "Mauritius",
+          "Mozambique",
+          "Namibia",
+          "Niger",
+          "Republic of the Congo",
+          "Rwanda",
+          "São Tomé and Príncipe",
+          "Senegal",
+          "Seychelles",
+          "Sierra Leone",
+          "South Africa",
+          "South Sudan",
+          "Eswatini",
+          "Togo",
+          "Uganda",
+          "Tanzania",
+          "Zambia",
+          "Zimbabwe",
+          "Zanzibar",
+        ],
+        AMR: [
+          "Peru",
+          "Columbia",
+          "USA",
+          "America",
+          "SUA",
+          "Antigua and Barbuda",
+          "Argentina",
+          "Bahamas",
+          "Barbados",
+          "Belize",
+          "Bolivia",
+          "Brazil",
+          "Canada",
+          "Chile",
+          "Colombia",
+          "Costa Rica",
+          "Cuba",
+          "Dominica Republic",
+          "Ecuador",
+          "El Salvador",
+          "Grenada",
+          "Guatemala",
+          "Guyana",
+          "Haiti",
+          "Honduras",
+          "Jamaica",
+          "Mexico",
+          "Nicaragua",
+          "Panama",
+          "Paraguay",
+          "Peru",
+          "Saint Kitts and Nevis",
+          "Saint Lucia",
+          "Saint Vincent and the Grenadines",
+          "Suriname",
+          "Trinidad and Tobago",
+          "United States",
+          "Uruguay",
+          "Venezuela",
+        ],
+        EUR: [
+          "Albania",
+          "Andorra",
+          "Armenia",
+          "Austria",
+          "Azerbaijan",
+          "Belarus",
+          "Belgium",
+          "Boznia and Herzegovina",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czeh Republic",
+          "Cehia",
+          "Denmark",
+          "Danemarca",
+          "Estonia",
+          "Finlanda",
+          "France",
+          "Franta",
+          "Georgia",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Iceland",
+          "Ireland",
+          "Israel",
+          "Italy",
+          "Kazakhstan",
+          "Kyrgyzstan",
+          "Latvia",
+          "Lithuania",
+          "Luxembourg",
+          "Malta",
+          "Moldova",
+          "Monaco",
+          "Montenegro",
+          "Netherlands",
+          "North Macedonia",
+          "Norway,",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Russia",
+          "San Marino",
+          "Serbia",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "Switzerland",
+          "Tajikistan",
+          "Turkey",
+          "Turkmenistan",
+          "Ukraine",
+          "United Kingdom",
+          "Uzbekistan",
+        ],
+        SEAR: [
+          "Bangladesh",
+          "Bhutan",
+          "North Korea",
+          "India",
+          "Indonesia",
+          "Maldives",
+          "Myanmar",
+          "Nepal",
+          "Sri Lanka",
+          "Thailand",
+          "Timor-Leste",
+          "Bali",
+          "Singapore",
+          "Coreea de Sud",
+        ],
+        EMR: [
+          "Afghanistan",
+          "Bahrain",
+          "Djibouti",
+          "Egypt",
+          "Iran",
+          "Iraq",
+          "Jordan",
+          "Kuwait",
+          "Lebanon",
+          "Libya",
+          "Morocco",
+          "Oman",
+          "Pakistan",
+          "Qatar",
+          "Saudi Arabia",
+          "Somalia",
+          "Sudan",
+          "Syria",
+          "Tunisia",
+          "United Arab Emirates",
+          "Yemen,",
+          "Dubai",
+        ],
+        WPR: [
+          "Australia",
+          "Brunei",
+          "Cambodia",
+          "China",
+          "Cook Islands",
+          "Fiji",
+          "Japan",
+          "Kiribati",
+          "Laos",
+          "Malaysia",
+          "Marshall Islands",
+          "Micronesia",
+          "Mongolia,",
+          "Nauru",
+          "New Zealand",
+          "Niue",
+          "Palau",
+          "Papua New Guinea",
+          "Philippines",
+          "Samoa",
+          "Singapore",
+          "Solomon Islands",
+          "South Korea",
+          "Tonga",
+          "Tuvalu",
+          "Vanuatu",
+          "Vietnam",
+          "Hong Kong",
+        ],
+      };
+      function editChange() {
+        let obj = document.getElementById("myedit");
+        let countryName = obj.value.toLowerCase();
+        let result = "";
+        for (let region in regiuniWHO) {
+          regiuniWHO[region].forEach((country) => {
+            let countryName2 = country
+              .toLowerCase()
+              .slice(0, countryName.length);
+            if (countryName2 == countryName && countryName != "") {
+              result +=
+                '<table><tr><td><font color="black" size="5">' +
+                country +
+                ": " +
+                "reg" +
+                "&nbsp;" +
+                region.toUpperCase() +
+                "<font></td></tr></table>";
+            }
+          });
+        }
+        document.getElementById("result").innerHTML =
+          result == ""
+            ? '<font color="red" size="5"><i>&nbsp; Nu exista </i></font>'
+            : result;
+      }
+    </script>
+  </body>
+</html>

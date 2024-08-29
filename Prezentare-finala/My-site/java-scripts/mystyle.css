@@ -1,0 +1,76 @@
+/* totdeauna startam cu fontul, importam din google.font.com  */
+
+@import url("https://fonts.googleapis.com/css?family=Muli& display=swap");
+
+/*apoi folosim selectorul universal pentru a aplica box sizing tuturor elementelor dintr-o pagina  */
+* {
+  box-sizing: border-box;
+}
+
+/* apoi setam bodyul */
+body {
+  background-color: #9dfeee;
+  font-family: "Muli", sans-serifs;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+.mycard {
+  width: 500px;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  background-color: antiquewhite;
+  border-radius: 6px;
+  box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.2);
+}
+/* .mycard:hover { //creaza probleme, se transmite si la modal 
+  transform: scale(1.05);
+  box-shadow: 12px 0px 20px rgba(0, 0, 0, 0.3);
+} */
+.result-area {
+  margin-top: 10px;
+}
+#btn {
+  border-radius: 5px; /* Razele colțurilor pentru rotunjire */
+  border: none; /* Eliminarea bordurii */
+  cursor: pointer; /* Stil cursor */
+}
+#btn:hover {
+  background-color: #0056b3;
+}
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #28a745;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e0e64;
+}
+
+.btn-back a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-title {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.modal-header {
+  background-color: bisque;
+}
+.raspuns {
+  margin-top: 10px;
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: large;
+}

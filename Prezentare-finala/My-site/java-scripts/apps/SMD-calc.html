@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator SMD</title>
+    
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        background: aqua;
+      }
+      .result-area {
+        margin-top: 10px;
+      }
+      #btn {
+        border-radius: 5px; /* Razele colțurilor pentru rotunjire */
+        border: none; /* Eliminarea bordurii */
+        cursor: pointer; /* Stil cursor */
+      }
+      #btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      Calculator auxiliar pentru SMD(diferenta medie standardizata)<br /> la variabile categoriale 
+          </h3>
+    <form id="input-area">
+      <label for="prob1">Probabilitatea 1</label>
+      <input id="prob1" type="number" placeholder="valoare intre 0 si 1!" />
+      <p>
+        <label for="prob2">Probabilitatea 2</label>
+        <input id="prob2" type="number" placeholder="valoare intre 0 si 1!" />
+      </p>
+      <p>
+        <button id="btn" onclick="calculeazaSMD()" type="button">
+          Calculeaza
+        </button>
+      </p>
+    </form>
+    <div class="raspuns">
+      <p id="smd-result">SMD =</p>
+    </div>
+	<script>
+const smdRezultat = document.getElementById("smd-result");
+
+function calculeazaSMD() {
+  // Preluarea valorilor din câmpurile de input
+  let prob1 = parseFloat(document.getElementById("prob1").value);
+  let prob2 = parseFloat(document.getElementById("prob2").value);
+
+  // Verificare input user si alerta de lipsa date
+  if (isNaN(prob1) || isNaN(prob2)) {
+    alert(
+      "Trebuiesc introduse valori intre 0 si 1 in campurile de probabilitati."
+    );
+    return;
+  }
+
+  //calcularea p si smd (variabile)
+  let prob = (prob1 + prob2) / 2;
+  let smd = Math.abs((prob1 - prob2) / Math.sqrt(prob * (1 - prob)));
+
+  // Afișarea rezultatului în elementul cu id-ul "smd-result"
+  smdRezultat.innerText = `SMD = ${smd.toFixed(3)}`;
+}
+	</script>
+  </body>
+</html>
