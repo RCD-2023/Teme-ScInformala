@@ -1,0 +1,12 @@
+{
+  "name": "fetch-extended",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "json-server": "0.16.3"
+  },
+  "scripts": {
+    "server": "json-server ./database/db.json",
+    "start": "json-server --watch db.json"
+  }
+}
