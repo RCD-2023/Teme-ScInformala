@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Practica tema5</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-section">
+        <div class="banner-confirmare" id="bannerConfirmare">
+          Thank you, <span id="userName"></span>! Your form has been submitted.
+        </div>
+        <form id="contactForm">
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Last Name"
+            required
+          />
+          <div>
+            <input
+              type="radio"
+              id="genderMale"
+              name="gender"
+              value="Male"
+              required
+            />
+            <label for="genderMale">Male</label>
+            <input
+              type="radio"
+              id="genderFemale"
+              name="gender"
+              value="Female"
+              required
+            />
+            <label for="genderFemale">Female</label>
+          </div>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your message"
+            required
+          ></textarea>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+      <div class="image-area">
+        <img src="https://via.placeholder.com/200" alt="Optional Image" />
+      </div>
+    </div>
+  </body>
+</html>
