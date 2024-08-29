@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Two Column Layout</title>
+  </head>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      background-color: antiquewhite;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+    .col1 {
+      background-color: lightblue;
+      border-right: 1px solid #000000;
+    }
+    .col2 {
+      background-color: lightgreen;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    .left a {
+      text-decoration: none;
+    }
+    a.active {
+      color: blue;
+      font-weight: bold;
+      
+    }
+    .inactive {
+        color: #000000;
+        cursor: default;
+      }
+      .left{
+        margin-top: 50px;
+
+      }
+    li {
+      list-style-type: none;
+      margin-top: 5px;
+    }
+    #myDog {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+      
+    }
+   
+    .caracteristici p {
+      position: relative;
+      
+      line-height: 2;
+      word-spacing: 5px;
+    }
+    b {
+      word-spacing: 5px;
+    }
+    .text-descriptiv{
+      padding-left: 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="col1">
+        <ul class="left">
+          <li><a href="#" class="inactive">Rotweiller </a></li>
+          <li><a href="#" class="active">Beagle</a></li>
+          <li><a href="#" class="inactive">Poodle</a></li>
+          <li><a href="#" class="inactive">German Sheperd</a></li>
+        </ul>
+      </div>
+      <div class="col2">
+        <img src="/IMG_Foxy.jpg" alt="Foxy" id="myDog" />
+        <h1>Stray dog</h1>
+        <div class="caracteristici">
+          <p>
+            <b>Weight: </b>10-11kg
+            <br />
+            <b>Coat: </b>Short Haired, hard coat
+            <br />
+            <b>Color: </b>Many colors
+          </p>
+        </div>
+        <div class="text-descriptiv">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            earum veniam exercitationem cumque laboriosam, accusantium rerum,
+            consequatur recusandae, voluptates nisi beatae! Repellendus facilis
+            debitis sint sunt itaque nisi totam a atque, aliquam recusandae illo
+            magni ad laboriosam facere laborum modi quam tenetur iusto natus.
+            Adipisci incidunt iste sunt temporibus possimus!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
