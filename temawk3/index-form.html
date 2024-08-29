@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact form</title>
+  </head>
+  <style>
+     body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            /* height: 100vh; */
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;;
+        }
+         .header {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #e3e5e7;
+            color: black;
+            margin-top: 0; 
+            display: flex;
+            align-items: center;
+
+            
+        }
+        .font-larger{
+            margin-left: 50px;
+            font-size: 50px;
+        }
+        .font-normal{
+            margin-left: 100px;
+            color: gray;
+        }
+         .container {
+            background-color: #d3cfcf;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            padding: 10px;
+            border-radius: 8px;
+            gap: 20px;
+            width: 780px;
+            height: 250px;
+            margin-top: 100px;
+        }
+        .input-fields,
+        .message-field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+         textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        button{
+           padding: 6px 12px; 
+           align-self: flex-end;
+        }
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            color: black;
+            margin-top: 50px; 
+        }
+        .adrese {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+        }
+
+  </style>
+  <body>
+    <div class="header">
+        <p class="font-larger"><b>Contact us</b></p>
+        <p class="font-normal">Feel free to contact us</p>
+    </div>
+    <div class="container">
+      <div class="input-fields">
+        <label for="name">Name</label>
+        <input type="text" class="name" id="name" />
+        <label for="email">Email</label>
+        <input type="email" class="email" id="email" />
+        <label for="subject">Subject</label>
+        <input type="text" class="subject" id="subject" />
+      </div>
+      <div class="message-field">
+        <label for="mesaj">Message</label>
+        <textarea name="mesaj" id="mesaj"></textarea>
+        <button type="button">Send Message</button>
+      </div>
+    </div>
+      <div class="footer">
+        <p>Or find us on social media</p>
+        <div class="adrese">
+            <a href="">Faceebook</a>
+            <a href="">Twitter</a>
+            <a href="">Instagram</a>
+        </div>
+    </div>
+  </body>
+</html>
