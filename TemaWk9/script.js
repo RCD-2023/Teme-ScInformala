@@ -7,10 +7,10 @@
 const UI = {
   getPhoto: document.getElementById("getPhotoBtn"),
   animalSelect: document.getElementById("animalSelect"),
-  animalImage: document.getElementById("masterPiece"),
+  animalImage: document.getElementById("animalImage"),
 };
 
-function getMasterpiecePhoto() {
+function getAnimalPhoto() {
   const selectedAnimal = UI.animalSelect.value;
   let apiUrl = "";
 
